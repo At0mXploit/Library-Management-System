@@ -48,5 +48,5 @@ service cloud.firestore {
 }
 ```
 
-Yeah, nothing more really. Peace out!
+Yeah, nothing more really. Peace out! Oh there is also free API if anyone wants.
 ## (—ᴗ—)
