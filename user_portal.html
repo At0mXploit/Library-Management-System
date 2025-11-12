@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/user_portal.css">
+<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<title>User Portal</title>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+</head>
+<body>
+<header>
+    <h1>Library User Portal</h1>
+    <div>
+        <span id="userWelcome">Welcome, User!</span>
+        <button id="logoutBtn" onclick="logoutUser()">Logout</button>
+    </div>
+</header>
+
+<div>
+    <nav>
+        <ul>
+            <li><a href="#" class="nav-link active" data-section="browse-books">Browse All Books</a></li>
+            <li><a href="#" class="nav-link" data-section="my-books">My Uploaded Books</a></li>
+            <li><a href="#" class="nav-link" data-section="upload-book">Add New Book</a></li>
+            <li><a href="#" class="nav-link" data-section="pending-books">Pending Approval</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Browse All Books -->
+        <section id="browse-books" class="content-section active">
+            <h2>Browse All Books</h2>
+            <div id="allBooksList" class="books-grid"></div>
+        </section>
+
+        <!-- My Uploaded Books -->
+        <section id="my-books" class="content-section">
+            <h2>My Uploaded Books</h2>
+            <div id="myUploadedBooks" class="books-grid"></div>
+        </section>
+
+        <!-- Add New Book -->
+        <section id="upload-book" class="content-section">
+            <h2>Add New Book</h2>
+            <form id="uploadBookForm">
+                <input type="text" id="bookTitle" placeholder="Book Title" required>
+                <input type="text" id="bookAuthor" placeholder="Author" required>
+                <textarea id="bookDescription" placeholder="Book Description"></textarea>
+                <input type="text" id="bookGenre" placeholder="Genre">
+                <input type="text" id="bookPDF" placeholder="PDF URL (optional)">
+                <button type="submit">Submit for Admin Approval</button>
+            </form>
+        </section>
+
+        <!-- Pending Books -->
+        <section id="pending-books" class="content-section">
+            <h2>Pending Books</h2>
+            <div id="pendingBooksList" class="books-grid"></div>
+        </section>
+    </main>
+</div>
+
+<!-- Book Details Modal -->
+<div id="bookDetailsModal" class="modal">
+  <div>
+    <span class="close">&times;</span>
+    <h3 id="detailBookTitle">Book Title</h3>
+    <p><strong>Author:</strong> <span id="detailBookAuthor"></span></p>
+    <p><strong>Genre:</strong> <span id="detailBookGenre"></span></p>
+    <p><strong>Description:</strong> <span id="detailBookDescription"></span></p>
+    <p><strong>Uploaded By:</strong> <span id="detailBookUploader"></span></p>
+    <p><strong>PDF:</strong> <a href="#" target="_blank" id="detailBookPDF">No PDF</a></p>
+    <p><strong>Status:</strong> <span id="detailBookStatus"></span></p>
+  </div>
+</div>
+<script src="js/user_portal.js"></script>
+</body>
+</html>

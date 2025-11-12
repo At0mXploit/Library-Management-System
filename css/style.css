@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* Style both admin and user blocks */
+.main_user_block, div:has(button[onclick*="user_login"]) {
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 20px auto;
+    width: 200px;
+    box-shadow: 5px 5px 0 #333;
+}
+
+.login_button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+}
+
+.login_button:hover {
+    background: #555;
+}
+
+.main_user_block, body > div {
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 20px auto;
+    width: 200px;
+    box-shadow: 5px 5px 0 #333;
+    transition: all 0.3s ease;
+}
+
+.main_user_block:hover, body > div:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}

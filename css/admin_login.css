@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+hr {
+    border: 1px solid #333;
+    margin: 10px 0;
+}
+
+#back_button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+}
+
+#back_button:hover {
+    background: #555;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    background: white;
+    border: 2px solid #333;
+    padding: 30px;
+    box-shadow: 5px 5px 0 #333;
+    transition: all 0.3s ease;
+    width: 300px;
+}
+
+.form:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    font-family: 'Courier New', monospace;
+    box-sizing: border-box;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    width: 100%;
+}
+
+button:hover {
+    background: #555;
+}

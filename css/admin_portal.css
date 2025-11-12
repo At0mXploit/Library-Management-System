@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0;
+    color: #222;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#adminLogoutBtn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#adminLogoutBtn:hover {
+    background: #555;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #333;
+}
+
+div > nav {
+    width: 220px;
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 20px;
+    margin: 10px;
+    height: fit-content;
+    transition: all 0.3s ease;
+}
+
+div > nav:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    border: 1px solid #333;
+    background: #eee;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #333;
+}
+
+.nav-link.active {
+    background: #333;
+    color: white;
+}
+
+main {
+    flex: 1;
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    max-width: 900px;
+    transition: all 0.3s ease;
+}
+
+main:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #333;
+    background: #fafafa;
+    font-family: 'Courier New', monospace;
+    margin-right: 10px;
+}
+
+button {
+    font-family: 'Courier New', monospace;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #555;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #333;
+}
+
+#pendingBooksList, #allBooksList, #usersList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#pendingBooksList div, #allBooksList div, #usersList div {
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+
+#pendingBooksList div:hover, #allBooksList div:hover, #usersList div:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+form {
+    background: white;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+form input[type="text"], form textarea {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #333;
+    margin-bottom: 15px;
+    background: #fafafa;
+    font-family: 'Courier New', monospace;
+}
+
+form button:hover {
+    background: #555;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #333;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal > div {
+    background-color: #fff;
+    width: 600px;
+    max-width: 90%;
+    padding: 30px 25px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0 #333;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.modal > div:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+.modal h3 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.modal p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.modal p strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+.modal .close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@media (max-width: 800px) {
+    div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav, main {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    #pendingBooksList, #allBooksList, #usersList, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

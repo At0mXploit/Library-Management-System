@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+hr {
+    border: 1px solid #333;
+    margin: 8px 0;
+}
+
+#back_button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+#back_button:hover {
+    background: #555;
+}
+
+.login_page {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    background: white;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 5px 5px 0 #333;
+    transition: all 0.3s ease;
+    width: 500px;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.form > hr, .form > h3, .form > br {
+    width: 100%; 
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.form:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #333;
+}
+
+.register-form, .login-form {
+    flex: 1;
+    min-width: 0;
+}
+
+.register-form {
+    border-right: 1px solid #333;
+    padding-right: 15px;
+}
+
+.login-form {
+    padding-left: 15px;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+input {
+    width: 100%;
+    padding: 6px;
+    margin: 4px 0;
+    border: 1px solid #333;
+    font-family: 'Courier New', monospace;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+input:focus {
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 #333;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 6px 0;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    width: 100%;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #555;
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 #333;
+}
+
+.message {
+    margin: 8px 0;
+    font-size: 11px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.login-form {
+    display: none;
+}
+
+.register-form {
+    display: block;
+}

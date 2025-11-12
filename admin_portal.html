@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Library Management System</title>
+    <link rel="stylesheet" href="css/admin_portal.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script>
+        // Check admin session
+        if (!localStorage.getItem('adminLoggedIn')) {
+            window.location.href = 'admin_login.html';
+        }
+
+        function adminLogout() {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminToken');
+            localStorage.removeItem('adminUser');
+            window.location.href = 'admin_login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Library Admin Portal</h1>
+        <div>
+            <span id="adminWelcome">Welcome, Admin!</span>
+            <button id="adminLogoutBtn" onclick="adminLogout()">Logout</button>
+        </div>
+    </header>
+
+    <div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-section="dashboard">Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-section="pending-approval">Pending Approval</a></li>
+                <li><a href="#" class="nav-link" data-section="manage-books">Manage Books</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Admin Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Books</h3>
+                        <span id="totalBooks">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Approvals</h3>
+                        <span id="pendingBooks">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <span id="totalUsers">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Activity</h3>
+                        <span id="todayActivity">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pending Approval Section -->
+            <section id="pending-approval" class="content-section">
+                <h2>Books Pending Approval</h2>
+                <div id="pendingBooksList"></div>
+            </section>
+
+            <!-- Manage Books Section -->
+            <section id="manage-books" class="content-section">
+                <h2>Manage All Books</h2>
+                <div>
+                    <input type="text" id="searchBooks" placeholder="Search books...">
+                    <button id="searchBooksBtn">Search</button>
+                </div>
+                <div id="allBooksList"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Book Modal -->
+    <div id="approvalModal" class="modal">
+        <div>
+            <span class="close">&times;</span>
+            <h3>Book Details</h3>
+            <div id="approvalBookDetails"></div>
+            <div>
+                <button id="finalApproveBtn">Approve Book</button>
+                <button id="finalRejectBtn">Reject Book</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin_portal.js"></script>
+</body>
+</html>

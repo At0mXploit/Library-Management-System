@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/user_login.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Library Portal</title>
+
+    <!-- Firebase SDKs should be added before your custom scripts -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script src="js/user_login.js"></script>
+</head>
+<body>
+    <h1 id="portal">Library Portal</h1>
+    <hr>
+    <button id="back_button" onclick="location.href='index.html'">Back</button>
+    <div class="login_page">
+        <div class="form">
+            <hr>
+            <h3>User Authentication</h3>
+            <hr>
+            <br>
+            <form class="register-form">
+                <input type="text" placeholder="Name" id="user_name"/>
+                <input type="password" placeholder="Password" id="user_pass" required/>
+                <input type="text" placeholder="Roll Number" id="user_roll" required/>
+                <input type="date" placeholder="DD/MM/YYYY" id="user_dob" required/>
+                <input type="email" placeholder="Email" id="user_email" required/>
+                <button id="register_new">Signup</button>
+                <p class="message">Already Registered? <a href="#">Sign In</a></p>
+            </form>
+
+            <form class="login-form">
+                <input type="email" placeholder="Email" id="login_email" required/>
+                <input type="password" placeholder="Password" id="login_password" required/>
+                <button type="submit" id="log_me_in">Login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
